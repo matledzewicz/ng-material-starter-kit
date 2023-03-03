@@ -33,13 +33,15 @@
             "style": "kebab-case"
           }
         ],
+        // TODO: Ignore tests
         "functional/prefer-immutable-types": [
           "error",
           {
-            "enforcement": "ReadonlyShallow",
-            "ignoreNamePattern": ["Observable<.*>"]
+            "enforcement": "ReadonlyShallow"
+            // "ignoreTypePattern": ["Observable"] // Readonly<>
           }
-        ]
+        ],
+        "functional/type-declaration-immutability": ["error"]
       }
     },
     {

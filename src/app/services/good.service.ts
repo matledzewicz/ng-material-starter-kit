@@ -5,9 +5,9 @@ import { GoodModel } from '../models/good.model';
 
 @Injectable({ providedIn: 'root' })
 export class GoodService {
-  constructor(private _httpClient: HttpClient) {}
+  constructor(private readonly _httpClient: Readonly<HttpClient>) {}
 
-  getAll(): Observable<GoodModel[]> {
+  getAll(): Readonly<Observable<GoodModel[]>> {
     return this._httpClient.get<GoodModel[]>(
       'https://fakestoreapi.com/products'
     );

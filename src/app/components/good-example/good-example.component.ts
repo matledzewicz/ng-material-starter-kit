@@ -15,7 +15,8 @@ import { GoodService } from '../../services/good.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GoodExampleComponent {
-  readonly products$: Observable<GoodModel[]> = this._goodService.getAll();
+  readonly products$: Readonly<Observable<GoodModel[]>> =
+    this._goodService.getAll();
 
-  constructor(private _goodService: GoodService) {}
+  constructor(private readonly _goodService: GoodService) {}
 }
