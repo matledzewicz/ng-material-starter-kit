@@ -11,8 +11,11 @@
       "extends": [
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
+        // "plugin:functional/external-typescript-recommended",
+        // "plugin:functional/recommended",
+        // "plugin:functional/stylistic"
       ],
-      "plugins": ["functional"],
+      "plugins": ["@typescript-eslint", "functional"],
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
@@ -30,7 +33,13 @@
             "style": "kebab-case"
           }
         ],
-        "functional/prefer-immutable-types": ["error"]
+        "functional/prefer-immutable-types": [
+          "error",
+          {
+            "enforcement": "ReadonlyShallow",
+            "ignoreNamePattern": ["Observable<.*>"]
+          }
+        ]
       }
     },
     {
