@@ -4,7 +4,7 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { BadService } from '../../services/bad.service';
 
 @Component({
@@ -15,12 +15,14 @@ import { BadService } from '../../services/bad.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BadExampleComponent implements OnInit {
-  data: any;
+  dataFoo: any;
   all$: Observable<any[]> = this._badService.getAll();
+  private _testSubject: Subject<string> = new Subject<string>();
+  public test$: Observable<string> = this._testSubject.asObservable();
 
   constructor(private _badService: BadService) {}
 
   ngOnInit() {
-    this._badService.getAll().subscribe((all) => (this.data = all));
+    this._badService.getAll().subscribe((all) => (this.dataFoo = all));
   }
 }

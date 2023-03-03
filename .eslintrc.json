@@ -17,6 +17,8 @@
       ],
       "plugins": ["@typescript-eslint", "functional"],
       "rules": {
+        // TODO: Optional Parameters
+        // TODO: Naming convention of methods
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -40,10 +42,20 @@
             // "ignoreTypePattern": ["Observable"] // Readonly<>
           }
         ],
-        // TODO: Optional Parameters
         "functional/type-declaration-immutability": ["error"],
         "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
-        "@typescript-eslint/no-explicit-any": "error"
+        "@typescript-eslint/no-explicit-any": "error",
+        // TODO: Think if should use it only for components/service - only for Object - Model
+        // TODO: Allow only Observables or Subjects
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "classProperty",
+            "format": ["camelCase"],
+            "suffix": ["$", "Subject"],
+            "leadingUnderscore": "allow"
+          }
+        ]
       }
     },
     {
