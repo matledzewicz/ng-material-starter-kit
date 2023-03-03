@@ -33,7 +33,6 @@
             "style": "kebab-case"
           }
         ],
-        // TODO: Ignore tests
         "functional/prefer-immutable-types": [
           "error",
           {
