@@ -5,11 +5,10 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GoodModel } from '../../models/good.model';
 import { BadService } from '../../services/bad.service';
 
 @Component({
-  selector: 'app-bad-example',
+  selector: 'bad-example',
   styleUrls: ['./bad-example.component.scss'],
   templateUrl: './bad-example.component.html',
   encapsulation: ViewEncapsulation.Emulated,
