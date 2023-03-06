@@ -15,8 +15,9 @@
         // "plugin:functional/recommended",
         // "plugin:functional/stylistic"
       ],
-      "plugins": ["@typescript-eslint", "functional"],
+      "plugins": ["@typescript-eslint", "functional", "eslint-custom-rules"],
       "rules": {
+        "eslint-custom-rules/example": "warn",
         // TODO: Optional Parameters
         // TODO: Naming convention of methods
         "@angular-eslint/directive-selector": [
